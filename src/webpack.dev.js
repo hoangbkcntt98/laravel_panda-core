@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
@@ -24,13 +25,22 @@ module.exports = {
         extensions: ["*", ".json", ".ts", ".js"]
     },
     plugins: [
+        new TerserPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'resources/assets/template/html.blade.php'),
-            filename: path.resolve(__dirname, 'resources/views/layouts/html.blade.php')
+            template: path.resolve(__dirname, 'resources/assets/template/template.blade.php'),
+            filename: path.resolve(__dirname, 'resources/views/layouts/layout.blade.php'),
+            minify: true
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css',
         }),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [
+                path.join(__dirname, 'public/js/**/*'),
+                path.join(__dirname, 'public/css/**/*'),
+            ],
+            verbose: true,
+        })
     ],
     module: {
         rules: [{

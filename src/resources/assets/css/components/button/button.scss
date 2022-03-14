@@ -1,0 +1,12 @@
+$degs: 90,-90,180,-180,360,-360;
+.panda-dropdown-button {
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+@each $deg in $degs {
+    .panda-rotate-#{$deg}{
+        transform: rotate(#{$deg+'deg'});
+    }
+}
