@@ -1,17 +1,24 @@
 import $ from "jquery";
-import button from ".";
+import { replaceClass, setCssAttributes } from '../../utils'
 const toogle = (): void => {
-   
-    let buttonText =  $('#panda-toogle-sidebar-button-icon').text();
-    if(buttonText == "chevron_right"){
-        $('.panda-sidebar').addClass('panda-sidebar-show').removeClass('panda-sidebar-hide');
+    let buttonText = $('#panda-toogle-sidebar-button-icon').text();
+    if (buttonText == "chevron_right") {
+        replaceClass('.panda-sidebar', 'panda-sidebar-show', 'panda-sidebar-hide');
         $('#panda-toogle-sidebar-button-icon').text('chevron_left')
-        $('.panda-toogle-sidebar-button').addClass('panda-toogle-sidebar-button-show').removeClass('panda-toogle-sidebar-button-hide');
-    }else{
-        $('.panda-sidebar').addClass('panda-sidebar-hide').removeClass('panda-sidebar-show');
+        setCssAttributes(['.panda-content','.panda-navbar'], [
+            { key: 'padding-left', val: '230px' }
+        ]);
+        replaceClass('.panda-toogle-sidebar-button', 'panda-toogle-sidebar-button-show', 'panda-toogle-sidebar-button-hide');
+    } else {
+        replaceClass('.panda-sidebar', 'panda-sidebar-hide', 'panda-sidebar-show');
         $('#panda-toogle-sidebar-button-icon').text('chevron_right')
-        $('.panda-toogle-sidebar-button').addClass('panda-toogle-sidebar-button-hide').removeClass('panda-toogle-sidebar-button-show');
+        setCssAttributes(['.panda-content','.panda-navbar'], [
+            { key: 'padding-left', val: '20px' },
+            { key: 'transition', val: 'ease-in 0.5s' }
+        ]);
+        // $('.panda-content').css('padding-left', '20px').css('transition', 'ease-in 0.5s');
+        replaceClass('.panda-toogle-sidebar-button', 'panda-toogle-sidebar-button-hide', 'panda-toogle-sidebar-button-show');
     }
-    
+
 }
-export default {toogle};
+export default { toogle };

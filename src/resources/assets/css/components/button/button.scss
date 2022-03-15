@@ -8,7 +8,7 @@ $degs: 90,-90,180,-180,360,-360;
 
 .panda-toogle-sidebar-button{
     &-hide{
-        transform: translateX(-210px);
+        transform: translateX(-$sidebar-width);
         transition: ease-in 0.5s;
     }
     &-show{
@@ -16,7 +16,7 @@ $degs: 90,-90,180,-180,360,-360;
         transition: ease-in 0.5s;
     }
     position: fixed;
-    left:  210px;
+    left:  $sidebar-width;
     top: 10px;
     width: 30px;
     height: 30px;

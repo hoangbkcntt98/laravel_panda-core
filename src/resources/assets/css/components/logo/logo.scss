@@ -1,5 +1,11 @@
 .panda-logo {
     @include flex(center, left);
-    width: 210px;
+    width: $sidebar-width;
+    img{
+        width: $sidebar-width;
+    }
     height: 50px;
+    &:hover{
+        cursor: pointer;
+    }
 }

@@ -14,12 +14,19 @@
 Route::get('/', function () {
     return view(view_index('pages.home'));
 })->name('home');
-Route::get('/users',function(){
-    return view(view_index('pages.users'));
-})->name('user-management');
-Route::get('/admin',function(){
-    return view(view_index('pages.users'));
-})->name('admin_management');
+
 Route::get('/account',function(){
     return view(view_index('pages.users'));
 })->name('account_management');
+Route::get('/admin',function(){
+    return view(view_index('pages.users'));
+})->name('admin_management');
+Route::get('/lesson',function(){
+    return view(view_index('pages.users'));
+})->name('lesson_schedule_management');
+Route::get('/lesson_student',function(){
+    return view(view_index('pages.users'));
+})->name('lesson_student_management');
+Route::get('/lesson_material',function(){
+    return view(view_index('pages.users'));
+})->name('material_management');
