@@ -1,0 +1,20 @@
+$dropdown-types : 'sidebar','list';
+@each $type in $dropdown-types {
+    .panda-dropdown-#{$type}-icon{
+        display: block;
+        color: white;
+        align-items: center;
+        width: 30px;
+        height:30px;
+    }
+    .panda-dropdown-#{$type}-content{
+        display: block;
+        width: 170px;
+        height: 100%;
+        padding: 6px 0px 6px 8px;
+    }
+    .panda-dropdown-#{$type}-selected{
+        background-color: rgb(95, 214, 223);
+    }
+    
+}

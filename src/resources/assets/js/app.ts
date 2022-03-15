@@ -1,3 +1,13 @@
 import '../css/app.scss'
-import dropdownClickButton from './components/button/dropdown-button';
-dropdownClickButton();
+import dropdown from './components/dropdown/dropdown';
+import page from './components/pages/pages';
+import logo from './components/logo/logo';
+import button from './components/button';
+
+(<any> window).PANDA = {
+    dropdown,
+    page,
+    logo,
+    button
+}
+logo.init();

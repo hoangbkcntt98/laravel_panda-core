@@ -5,6 +5,28 @@ $degs: 90,-90,180,-180,360,-360;
     height: 30px;
     display: inline-block;
 }
+
+.panda-toogle-sidebar-button{
+    &-hide{
+        transform: translateX(-210px);
+        transition: ease-in 0.5s;
+    }
+    &-show{
+        transform: translateX(0px);
+        transition: ease-in 0.5s;
+    }
+    position: fixed;
+    left:  210px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: gray;
+    &:hover{
+        cursor: pointer;
+        background-color: coral;
+    }
+}
 @each $deg in $degs {
     .panda-rotate-#{$deg}{
         transform: rotate(#{$deg+'deg'});

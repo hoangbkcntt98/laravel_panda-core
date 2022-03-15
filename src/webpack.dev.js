@@ -15,6 +15,20 @@ module.exports = {
             chunks: 'all'
         }
     },
+    watchOptions: {
+        aggregateTimeout: 200,
+        poll: 1000,
+    },
+    // devServerL: {
+    //     static: {
+    //         directory: path.join(__dirname, 'public'),
+    //     },
+    //     compress: true,
+    //     port: 8002,
+    //     devMiddleware:{
+
+    //     }
+    // },
     output: {
         path: path.resolve(__dirname, "public"),
         filename: "js/[name].[contenthash].js",
@@ -44,34 +58,42 @@ module.exports = {
     ],
     module: {
         rules: [{
-                test: /\.ts$/,
-                exclude: [/node_modules/],
-                use: [
-                    'ts-loader'
-                ]
+            test: /\.ts$/,
+            exclude: [/node_modules/],
+            use: [
+                'ts-loader'
+            ]
 
-            },
-            {
-                test: /\.scss/,
-                use: [
-                    MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
-                ]
-            },
-            {
-                test: /\.(jpg|png|gif)$/,
-                use: "url-loader"
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader', // down version to compatitable version
+        },
+        {
+            test: /\.scss/,
+            use: [
+                MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
+            ]
+        },
+        {
+            test: /\.(png|jpe?g|gif)$/i,
+            use: [
+                {
+                    loader: 'url-loader',
                     options: {
-                        presets: ['@babel/env'],
-                        plugins: ['@babel/plugin-proposal-class-properties']
+                        limit: 1000,
+                        name : 'assets/images/[name].[ext]'
                     }
+                },
+            ]
+        },
+        {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader', // down version to compatitable version
+                options: {
+                    presets: ['@babel/env'],
+                    plugins: ['@babel/plugin-proposal-class-properties']
                 }
-            },
+            }
+        },
         ]
     }
 }
