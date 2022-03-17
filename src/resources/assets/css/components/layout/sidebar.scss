@@ -1,9 +1,4 @@
-$sidebar-background-color: #573d928a;
-$sidebar-item-color: #8856c2f3;
-$sidebar-sub-item-color: #835daf81;
-$boder-item: #815fdf;
-$boder-sub-item: #ddb1e6cc;
-$hover-color: #b67ff5;
+
 .panda-sidebar {
     @include mobile{
         display: none!important;
