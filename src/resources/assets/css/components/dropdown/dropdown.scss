@@ -2,7 +2,7 @@ $dropdown-types : 'sidebar','list';
 @each $type in $dropdown-types {
     .panda-dropdown-#{$type}-icon{
         @include flex(center,right);
-        color: white;
+        color: $lightning-text-color;
         align-items: center;
         width: 30px;
         height:30px;
@@ -21,5 +21,6 @@ $dropdown-types : 'sidebar','list';
 }
 /*dropdown*/
 .panda-dropdown-selected{
-    background-color: $hover-color;
+    background: $lightning-selected-bg-color;
+    color: white;
 }

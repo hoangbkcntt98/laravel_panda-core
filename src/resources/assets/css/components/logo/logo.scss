@@ -3,9 +3,11 @@
     width: $sidebar-width;
     img{
         width: $sidebar-width;
+        height: 48px;
     }
-    height: 50px;
+ 
     &:hover{
         cursor: pointer;
     }
+    margin-bottom: 2px;
 }

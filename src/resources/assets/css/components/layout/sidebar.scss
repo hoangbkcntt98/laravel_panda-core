@@ -3,6 +3,10 @@
     @include mobile{
         display: none!important;
     }
+    &-toggle{
+        transform: translateX(-100%);
+        transition: ease-in 0.5s;
+    }
     &-hide {
         transform: translateX(-100%);
         transition: ease-in 0.5s;
@@ -15,55 +19,49 @@
     width: $sidebar-width;
     position: fixed;
     z-index: 1;
-    top: 0;
+    top: 60px;
     left: 0;
-    background-color: $sidebar-background-color;
+    background-color: $lightning-sidebar-bg-color;
     display: block;
     font-style: bold;
     font-weight: 700;
     text-transform: uppercase;
 }
 .panda-sidebar {
-    &__selected {
-        background-color: #00f2fa !important;
-    }
     &__items {
         @include flex(center, left);
         padding: 10px 0px 0px 10px;
         text-decoration: none;
         font-size: 12px;
-        color: white;
+        color: $lightning-text-color;
         height: 50px;
-        background-color: $sidebar-item-color;
-        border-top: 1px solid $boder-item;
+        border-top: 1px solid $lightning-border-color;
     }
     &__items:hover {
         cursor: pointer;
-        background-color: $hover-color;
+        background: $lightning-hover-bg-color;
         transition: all 0.5s;
     }
     &__sub-items {
         &-show {
             display: block;
-            animation: showDropDown 0.5s ease-in-out both;
+            animation: showDropDown 0.5s all;
         }
         &__item {
             @include flex(center,left);
             font-weight: 400;
             height: 45px;
             padding: 6px 8px 6px 38px;
-            border-top: solid 1px $boder-sub-item;
             &:hover {
                 cursor: pointer;
-                background-color: $hover-color;
-                text-decoration: underline;
+                background: $lightning-hover-bg-color;
             }
         }
         display: none;
         text-decoration: none;
         font-size: 11px;
-        background-color: $sidebar-sub-item-color;
-        color: white;
+        background: $lightning-bg-color;
+        color: $lightning-text-color;
     }
 }
 @keyframes showDropDown {

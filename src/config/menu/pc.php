@@ -21,20 +21,14 @@ return [
             'material_management' => 'Material Management'
         ]
     ],
-    'personal_setting' => [
-        'index' => 'Personal Setting',
-        'icon' => 'manage_accounts',
-        'sub_menu' => [
-            'admin_management' => 'Admin Management',
-            'account_management' => 'Account Management'
-        ]
-    ],
-    'system_customization' => [
-        'index' => 'System Customization',
-        'icon' => 'settings_suggest',
-        'sub_menu' => [
-            'admin_management' => 'Admin Management',
-            'account_management' => 'Account Management'
-        ]
-    ],
+    // 'personal_setting' => [
+    //     'index' => 'Personal Setting',
+    //     'icon' => 'manage_accounts',
+       
+    // ],
+    // 'system_customization' => [
+    //     'index' => 'System Customization',
+    //     'icon' => 'settings_suggest',
+        
+    // ],
 ];

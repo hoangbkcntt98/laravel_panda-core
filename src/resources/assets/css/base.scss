@@ -8,11 +8,11 @@
     -webkit-tap-highlight-color: transparent;
     user-select: none;
 }
-.panda-hide{
-    display: none!important;
+.panda-hide {
+    display: none !important;
 }
-.panda-show{
-    display: block!important;
+.panda-show {
+    display: block !important;
 }
 html {
     font-size: 13px;
@@ -41,14 +41,14 @@ a:hover {
 img {
     max-width: 100%;
 }
-
-@each $color,
-$val in $colors {
+button:focus {
+    outline: none;
+}
+@each $color, $val in $colors {
     .color-#{$color} {
         color: $val;
     }
-    @each $color1,
-    $val1 in $colors {
+    @each $color1, $val1 in $colors {
         .bg-#{$color}-c-#{$color1} {
             background-color: $val;
             color: $val1;
@@ -122,16 +122,76 @@ $val in $colors {
 }
 //icons
 /* Rules for sizing the icon. */
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-18 {
+    font-size: 18px;
+}
+.material-icons.md-24 {
+    font-size: 24px;
+}
+.material-icons.md-36 {
+    font-size: 36px;
+}
+.material-icons.md-48 {
+    font-size: 48px;
+}
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+@each $role,$color in $role-bg-colors {
+    .lightning-main-color-#{$role}{
+        background: $color !important;
+    }
+}
+@each $mode in $modes {
+    @each $type in $box-shadow-types {
+        .#{$mode}-box-shadow-#{$type}{
+            
+            @include initBoxShadow($mode,$type);
+        }
+        
+    }
+}
+/**shapes **/
+$shape-sizes: (
+    "5" : 5px,
+    "10": 10px,
+    "20": 20px,
+    "25": 25px,
+);
+@each $key,$size in $shape-sizes {
+    @each $color,$color_val in $colors {
+        .triangle-up-#{$key}-#{$color}{
+            width: 0 !important;
+            height: 0 !important;
+            border-left: $size solid transparent;
+            border-right: $size solid transparent;
+            border-bottom: #{$size/4*3} solid $color_val;
+        }
+        .cycle-#{$key}-#{$color}{
+            display: block;
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            background-color: $color_val;
+        }
+    }
+    
+}
+.panda-selected{
+    background-color: rgb(218, 212, 212) !important;
+}
+
 

@@ -5,11 +5,16 @@ import {setCookie} from '../../utils';
  * @param id id of item in sidebar
  */
 function dropdownSidebar(id: string) {
-    console.log(`.panda-sidebar__sub-items:not(#panda-sidebar-item-${id})`)
     let icon_text = $('#panda-sidebar-item-' + id).children('.panda-dropdown-sidebar-icon').eq(0).children().text()
-    $('#panda-sidebar-item-' + id).children('.panda-dropdown-sidebar-icon').eq(0).children().text(icon_text=="chevron_right"?'expand_more':'chevron_right')
-    $(`.panda-sidebar__items:not(#panda-sidebar-item-${id})`).removeClass('panda-dropdown-selected')
-    $('#panda-sidebar-item-' + id).toggleClass('panda-dropdown-selected')
+    let after_icon = ''
+    console.log('icontext',icon_text)
+    if(icon_text=="chevron_right"){
+        after_icon = "expand_more"
+    }else{
+        after_icon = "chevron_right"
+    }
+    $('.panda-dropdown-sidebar-icon').children().text("chevron_right")
+    $('#panda-sidebar-item-' + id).children('.panda-dropdown-sidebar-icon').eq(0).children().text(after_icon)
     $(`.panda-sidebar__sub-items:not(#panda-dropdown-sidebar-sub-item-${id})`).removeClass('panda-sidebar__sub-items-show')
     $('#panda-dropdown-sidebar-sub-item-' + id).toggleClass('panda-sidebar__sub-items-show')
     setCookie('sidebarActive',id,30);

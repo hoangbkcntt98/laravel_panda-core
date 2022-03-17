@@ -18,6 +18,7 @@
     <div class="panda-content">
         @include(view_index('components.breadcumb'))
         @yield('content')
+        @include('layouts.footer')
     </div>
     
 </body>

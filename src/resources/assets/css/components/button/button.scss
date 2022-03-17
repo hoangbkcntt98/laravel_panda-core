@@ -7,24 +7,20 @@ $degs: 90,-90,180,-180,360,-360;
 }
 
 .panda-toogle-sidebar-button{
-    &-hide{
-        transform: translateX(-$sidebar-width);
-        transition: ease-in 0.5s;
+    &-selected{
+        background-color: $lightning-selected-bg-color;
     }
-    &-show{
-        transform: translateX(0px);
-        transition: ease-in 0.5s;
-    }
-    position: fixed;
-    left:  $sidebar-width;
-    top: 10px;
-    width: 30px;
-    height: 30px;
+    z-index: 99;
+    padding: 1rem;
+    width: 40px;
+    height: 40px;
+    @include flex(center,center);
+    margin-left: 1rem;
     border: none;
-    background-color: gray;
+    border-radius: 50%;
     &:hover{
         cursor: pointer;
-        background-color: coral;
+        background-color: rgb(170, 162, 162);
     }
 }
 @each $deg in $degs {
