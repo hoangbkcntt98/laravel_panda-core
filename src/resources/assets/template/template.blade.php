@@ -13,14 +13,13 @@
 </head>
 
 <body>
-    @include('layouts.navbar')
-    @include('layouts.sidebar')
+    @include(view_index('layouts.navbar'))
+    @include(view_index('layouts.sidebar'))
     <div class="panda-content">
         @include(view_index('components.breadcumb'))
         @yield('content')
         @include('layouts.footer')
     </div>
-    
 </body>
 
 </html>

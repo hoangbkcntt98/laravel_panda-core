@@ -24,3 +24,15 @@ $dropdown-types : 'sidebar','list';
     background: $lightning-selected-bg-color;
     color: white;
 }
+.panda-dropdown{
+    &__wrapper{
+        position: relative;
+    }
+    &__toggle{
+        display: block;
+    }
+    &__container{
+        display: block;
+        display: none;
+    }
+}

@@ -1,5 +1,11 @@
 @extends('layouts.layout')
 @section('content')
-<h1>Hello</h1>
-<div class="panda-heading-big">This is my home page</div>  
+<div class="panda-dropdown__toggle" onclick="PANDA.commonDropdown.dropdown(this)">Click me</div>
+<div class="panda-dropdown__container">
+    <div class="panda-dropdown__item">Hello</div>
+    <div class="panda-dropdown__item">Hello</div>
+    <div class="panda-dropdown__item">Hello</div>
+    <div class="panda-dropdown__item">Hello</div>
+    <div class="panda-dropdown__item">Hello</div>
+</div>
 @endsection

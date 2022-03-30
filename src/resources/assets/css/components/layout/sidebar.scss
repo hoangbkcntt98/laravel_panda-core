@@ -1,5 +1,23 @@
 
 .panda-sidebar {
+    &__wrapper{
+        // @include flex(center,left);
+        width: $sidebar-width;
+    }
+    &__toggle{
+        @include flex(center,left);
+        padding: 10px 10px;
+        &:hover{
+            cursor: pointer;
+            background: $lightning-hover-bg-color;
+            transition: all 0.5s;
+        }
+        &__content{
+            padding-left: 10px;
+            width: 200px;
+        }
+    }
+
     @include mobile{
         display: none!important;
     }
@@ -57,7 +75,6 @@
                 background: $lightning-hover-bg-color;
             }
         }
-        display: none;
         text-decoration: none;
         font-size: 11px;
         background: $lightning-bg-color;

@@ -1,34 +1,20 @@
 <?php
 return [
-    'home' => [
-        'icon' => 'home',
-        'index' => 'Home'
+    'icons' => [
+        'home'              => 'home',
+        'user_management'   => 'people',
+        'lesson_management' => 'menu_book'
     ],
-    'user_management' => [
-        'icon' => 'people',
-        'index' => 'User Management',
-        'sub_menu' => [
-            'admin_management' => 'Admin Management',
-            'account_management' => 'Account Management'
-        ]
-    ],
-    'lesson_management' => [
-        'index' => 'Lesson Management',
-        'icon' => 'menu_book',
-        'sub_menu' => [
-            'lesson_schedule_management' => 'Schedule Management',
-            'lesson_student_management' => 'Student Management',
-            'material_management' => 'Material Management'
-        ]
-    ],
-    // 'personal_setting' => [
-    //     'index' => 'Personal Setting',
-    //     'icon' => 'manage_accounts',
-       
-    // ],
-    // 'system_customization' => [
-    //     'index' => 'System Customization',
-    //     'icon' => 'settings_suggest',
-        
-    // ],
+    'menu' => [
+        'home',
+        'user_management' => [
+            'admin_management',
+            'account_management',
+        ],
+        'lesson_management' => [
+            'lesson_schedule_management',
+            'lesson_student_management',
+            'material_management'
+        ],
+    ]
 ];
