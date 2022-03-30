@@ -80,6 +80,7 @@ $search-bar-input-width: 100%;
         @include flex(center,flex-end);
         height: 100%;
         position: relative;
+       
         gap: 2px;
         border-radius: 23px;
         background-color: $lightning-hover-bg-color;
@@ -103,6 +104,9 @@ $search-bar-input-width: 100%;
             border-radius: 20px 20px 20px 20px;
             font-weight: 500;
             word-wrap: break-word;
+        }
+        &__dropdown{
+            display: none;
         }
         
     }

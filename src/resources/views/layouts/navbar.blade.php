@@ -3,7 +3,7 @@
         <i class="material-icons" id="panda-toogle-sidebar-button-icon">menu</i>
     </button>
     <div class="panda-logo">
-        <img src="" alt="">
+        <img src="assets/images/panda-logo.png" alt="">
     </div>
 
     <div class="panda-navbar__search-bar">
@@ -14,7 +14,7 @@
     </div>
     <div class="panda-navbar__notification">
         @foreach (['email','notifications','email','light_mode'] as $icon)
-        @include('components.icon.icon', [
+        @include('components.notification.icons', [
             'name' => $icon,
             'size' => 43,
             'count' => 123
@@ -28,6 +28,6 @@
         <div class="panda-navbar__account__name">
             Admin
         </div>
+        @include(view_index('components.dropdown.account'))
     </div>
 </div>
-{{-- <div class="panda-navbar__line lightning-main-color-admin"></div> --}}

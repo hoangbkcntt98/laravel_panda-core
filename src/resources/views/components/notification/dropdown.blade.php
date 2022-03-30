@@ -1,7 +1,6 @@
 <div class="panda-notification__container">
     <div class="triangle-up-5-white panda-notification__triangle "></div>
-
-    <div class="panda-notification__dropdown  lightning-box-shadow-right">
+    <div class="panda-notification__dropdown  lightning-box-shadow-right" onblur="close()"> 
         <div class="panda-notification__header"> <i class="material-icons md-18">{{ $icon }}</i>Notifications
             <span>({{ $count }})</span></div>
         <div class="panda-notification__option">

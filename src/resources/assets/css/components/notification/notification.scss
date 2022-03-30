@@ -1,4 +1,8 @@
 .panda-notification {
+    &__icon__wrapper{
+        display: block;
+        position: relative;
+    }
     &-selected{
         background-color: $lightning-hover-bg-color;;
     }
@@ -26,6 +30,7 @@
             font-size: 12px;
             font-weight: 300;
             &:hover{
+                cursor: pointer;
                 color: $lightning-text-color;
             }
         }
@@ -37,6 +42,7 @@
             color: $lightning-link-color;
             border-radius: 4px;
             &:hover{
+                cursor: pointer;
                 background-color: $lightning-hover-bg-color;
                 text-decoration: underline;
             }
@@ -129,6 +135,7 @@
             padding: 30px 5px;
             @include flex(center,flex-start);
             &:hover{
+                cursor: pointer;
                 background-color: $lightning-hover-bg-color;
             }
         }
