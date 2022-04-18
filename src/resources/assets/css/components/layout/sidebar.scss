@@ -1,6 +1,7 @@
 
 .panda-sidebar {
     &__wrapper{
+        margin-top: 10px;
         // @include flex(center,left);
         width: $sidebar-width;
     }
@@ -69,7 +70,7 @@
             @include flex(center,left);
             font-weight: 400;
             height: 45px;
-            padding: 6px 8px 6px 38px;
+            padding: 6px 8px 6px 45px;
             &:hover {
                 cursor: pointer;
                 background: $lightning-hover-bg-color;
@@ -77,7 +78,7 @@
         }
         text-decoration: none;
         font-size: 11px;
-        background: $lightning-bg-color;
+        background: rgb(250, 244, 244);
         color: $lightning-text-color;
     }
 }

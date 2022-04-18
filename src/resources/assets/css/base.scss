@@ -30,12 +30,12 @@ ul {
 }
 
 a {
-    text-decoration: none;
-    color: unset;
+    text-decoration: none !important;
+    color: unset !important;
 }
 
 a:hover {
-    color: $main-color;
+    color: steelblue;
 }
 
 img {
@@ -193,5 +193,31 @@ $shape-sizes: (
 .panda-selected{
     background-color: rgb(218, 212, 212) !important;
 }
-
-
+.panda-row{
+    width: 100%;
+    padding: 10px 0px;
+}
+.is-flex{
+    display: flex !important;
+}
+@each $gap in $flex-gaps {
+    .gap-#{$gap}{
+        gap: #{$gap+'px'}
+    }
+}
+@each $width in $custom_width {
+    .width-#{$width}{
+        width: #{$width+'%'}
+    }
+    .height-#{$width}{
+        height: #{$width+'%'}
+    }
+}
+.panda-center{
+    @include flex(center, center);
+}
+@each $gap in $flex-gaps {
+    .padding-#{$gap}{
+        padding: #{$gap+'px'} !important;
+    }
+}

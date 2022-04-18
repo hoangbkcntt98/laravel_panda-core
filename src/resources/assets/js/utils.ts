@@ -45,3 +45,20 @@ export function switchClass(selector : string, class1: string, class2:string, de
         $(selector).toggleClass(`${class1} ${class2}`);
     }
 }
+export function sendAjaxRequest(_type: string, _url: string, _params: string, _callback: CallableFunction) {
+
+    var request = $.ajax({
+        type: _type,
+        url:_url,
+        data: _params,
+        contentType: 'json'
+    });
+    request.done(function(res) {
+        _callback(res);
+    });
+    request.fail(function(jqXHR, textStatus) {
+        console.error(jqXHR);
+        _callback({ err: true, message: "Request failed: " + textStatus });
+    });
+
+}

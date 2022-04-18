@@ -1,6 +1,9 @@
 <?php
 return [
-    'menu' => [
+    'pc' => [
+        'home' => [
+            'index' => 'Home'
+        ],
         'user_management' => [
             'index'             => 'User Management',
             'admin_management'  => [
@@ -13,7 +16,7 @@ return [
             ]
         ],
         'lesson_management' => [
-            'index'                         => 'Lesson Management',
+            'index' => 'Lesson Management',
             'lesson_schedule_management' => [
                 'index' => 'Schedule Management',
             ],

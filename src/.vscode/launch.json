@@ -11,7 +11,7 @@
             "port": 9009,
             "hostname": "0.0.0.0",
             "pathMappings":{
-                "/var/www/html/origin": "${workspaceFolder}"
+                "/var/www/html": "${workspaceFolder}"
             }
         },
         

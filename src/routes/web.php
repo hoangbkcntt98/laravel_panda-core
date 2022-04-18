@@ -12,21 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view(view_index('pages.home'));
+    return view(viewIndex('pages.home'));
 })->name('home');
+Route::get('/account.index', function () {
+    return view(viewIndex('pages.home'));
+})->name('account.index');
 
-Route::get('/account',function(){
-    return view(view_index('pages.users'));
-})->name('account_management');
+Route::get('/account','User\UserController@index')->name('account_management');
+Route::post('/account.delete','User\UserController@delete')->name('account_management.delete');
 Route::get('/admin',function(){
-    return view(view_index('pages.users'));
+    return view(viewIndex('pages.users'));
 })->name('admin_management');
 Route::get('/lesson',function(){
-    return view(view_index('pages.users'));
+    return view(viewIndex('pages.users'));
 })->name('lesson_schedule_management');
 Route::get('/lesson_student',function(){
-    return view(view_index('pages.users'));
+    return view(viewIndex('pages.users'));
 })->name('lesson_student_management');
 Route::get('/lesson_material',function(){
-    return view(view_index('pages.users'));
+    return view(viewIndex('pages.users'));
 })->name('material_management');

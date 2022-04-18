@@ -5,6 +5,8 @@ import button from './components/button';
 import notification from './components/layout/navbar/notification';
 import navbar from './components/layout/navbar/account';
 import commonDropdown from './components/common/dropdown';
+import accordion from './components/accordion/accordion';
+import list from './components/list';
 import { importAll } from './utils';
 (<any>window).PANDA = {
     commonDropdown,
@@ -12,23 +14,12 @@ import { importAll } from './utils';
     dropdown,
     page,
     button,
-    notification
+    notification,
+    accordion,
+    list
+};
+window.onload = () =>{
+    commonDropdown.init();
 }
-commonDropdown.init();
+
 importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
-$(document).click(function () {
-    var container = $(".panda-box");
-    var icon = $(".panda-icon")
-    var click = $(".clickable")
-    event.stopPropagation();
-    // if (event.target instanceof Element) {
-    //     console.log(click.is(event.target),click.has(event.target).length)
-    //     if (!$(event.target).closest('panda-box').length&&!container.is(event.target) && !container.has(event.target).length && !click.is(event.target) && click.has(event.target).length!=0) {
-    //         if (container.hasClass('panda-show')) {
-    //             container.removeClass('panda-show')
-    //             // container.addClass('panda-hide')
-    //             $('.panda-icon').removeClass('panda-notification-selected')
-    //         }
-    //     }
-    // }
-});

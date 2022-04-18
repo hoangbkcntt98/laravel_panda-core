@@ -3,7 +3,7 @@
 @endif
 <div class="panda-sidebar__toggle__content">
 
-    {{ $text }}
+    {{ getMenuItems($text) }}
 </div>
 @if ($has_sub)
     <div class="panda-dropdown-sidebar-icon">

@@ -28,3 +28,7 @@ $degs: 90,-90,180,-180,360,-360;
         transform: rotate(#{$deg+'deg'});
     }
 }
+.btn-small{
+    width: 0px;
+    height: 30px;
+}

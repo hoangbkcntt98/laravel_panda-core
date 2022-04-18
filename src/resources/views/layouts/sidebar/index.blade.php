@@ -1,12 +1,12 @@
 @php
-$menus = config('menu.pc');
-// dump($menus);
+    $menus = menu();
+    $icons = menu_icons();
 @endphp
-<div class="panda-sidebar lightning-box-shadow-right">
-    @foreach ($menus['menu'] as $key => $item)
+<div class="panda-sidebar">
+    @foreach ($menus as $key => $item)
         @php
             $has_submenu = is_array($item);
-            $current_route = Route::currentRouteName();
+            $current_route = curr_route();
             $sub_menu = $has_submenu ? $item : [];
             $contain_curr_route = in_array($current_route, $sub_menu);
             $selected = $item == $current_route;
@@ -15,7 +15,7 @@ $menus = config('menu.pc');
         @endphp
         @include('layouts.sidebar.items.template',[
             'text' => $text,
-            'icon' => $menus['icons'][$text],
+            'icon' => $icons[$text],
             'has_sub' => $has_submenu,
             'selected' => $selected,
             'sub_selected' => $sub_selected,
